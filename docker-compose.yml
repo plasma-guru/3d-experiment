@@ -1,0 +1,9 @@
+3d-exp-app:
+  ports:
+  - 80:80
+  build: github.com/plasma-guru/3d-experiment.git
+  tty: true
+  stdin_open: true
+#   volume_driver: rancherserver-1-convoy-efs
+  volumes:
+    - "3d-exp-app:/usr/local/apache2/htdocs/"
