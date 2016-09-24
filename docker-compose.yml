@@ -6,10 +6,8 @@ app:
   volumes:
     - "3d-exp-app:/usr/local/apache2/htdocs/"
 app-lb:
-  tty: true
-  stdin_open: true
   image: rancher/load-balancer-service
+  ports:
+  - 1001:80
   links:
   - app:app
-  ports:
-  - 1000:80

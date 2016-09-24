@@ -1,5 +1,6 @@
 app-lb:
   scale: 1
-  load_balancer_config: {}
+  load_balancer_config: 
+    name: app-lb config
 app:
   scale: 1
