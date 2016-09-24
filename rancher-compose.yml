@@ -1,2 +1,5 @@
-3d-exp-app:
+app-lb:
+  scale: 1
+  load_balancer_config: {}
+app:
   scale: 1

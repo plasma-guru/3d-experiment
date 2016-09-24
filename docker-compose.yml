@@ -1,9 +1,15 @@
-3d-exp-app:
-  ports:
-  - 80:80
-  build: github.com/plasma-guru/3d-experiment.git
+app:
+  image: plasmaguru/3d-exp-app
   tty: true
   stdin_open: true
-#   volume_driver: rancherserver-1-convoy-efs
+  volume_driver: rancherserver-1-convoy-efs
   volumes:
     - "3d-exp-app:/usr/local/apache2/htdocs/"
+app-lb:
+  tty: true
+  stdin_open: true
+  image: rancher/load-balancer-service
+  links:
+  - app:app
+  ports:
+  - 1000:80
